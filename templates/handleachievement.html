@@ -1,0 +1,42 @@
+{% extends 'basic.html' %} 
+{% block title %} Achievement{% endblock title %}
+
+{% block body %} 
+{% load static %}
+<section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Welcome to My Achievement</h2>
+         
+        </div>
+
+        <div class="row">
+
+{% for post1 in posts reversed %}
+
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+
+            <div class="col-lg-4" data-aos="fade-right">
+            <img src="{{post1.img.url}}" class="img-fluid" alt="no-image">
+          </div>
+          <br>
+
+            <div class="icon"><i class="bi bi-briefcase"></i></div>
+            <h4 class="title"><a href="">{{post1.title}}</a></h4>
+
+            <p class="description">{{post1.description}}</p>
+            <h6>Posted By : <b>{{post1.authname}} </b></h6>
+            <p>Posted on : <b>{{post1.timeStamp}} </b></p>
+          </div>
+
+{% endfor %}
+
+
+         
+         
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+{% endblock body %}
